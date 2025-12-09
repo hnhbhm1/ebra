@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إبراهيم أبو حافظ </title>
+    <title>إبراهيم أبو حافظ - منصة تعليم التداول</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
@@ -698,4 +698,351 @@
                     <h4>التواصل</h4>
                     <p>للأسئلة والاستفسارات:</p>
                     <p>راسلنا على قنوات التواصل الاجتماعي</p>
-       
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>جميع الحقوق محفوظة &copy; إبراهيم أبو حافظ <span id="currentYear"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // البيانات الأساسية للموقع
+        const siteData = {
+            trading: {
+                title: "دروس التداول للمبتدئين",
+                content: `
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="basics">المرحلة الأولى - الأساسيات</button>
+                        <button class="tab-btn" data-tab="technical">المرحلة الثانية - التحليل الفني</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="basics">
+                        <h3 style="margin-bottom: 20px; color: var(--primary-color);">المرحلة الأولى: أساسيات التداول</h3>
+                        <div id="basicsLessons">
+                            <!-- سيتم إضافة الدروس هنا عبر JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="technical">
+                        <h3 style="margin-bottom: 20px; color: var(--primary-color);">المرحلة الثانية: التحليل الفني</h3>
+                        <div id="technicalLessons">
+                            <!-- سيتم إضافة الدروس هنا عبر JavaScript -->
+                        </div>
+                    </div>
+                `
+            },
+            
+            vip: {
+                title: "جروب التوصيات المدفوعة VIP",
+                content: `
+                    <h3 style="margin-bottom: 20px; color: var(--primary-color);">البــروكــرز المعتمدة</h3>
+                    <p style="margin-bottom: 25px;">اختر أحد البروكرز التالية واشترك باستخدام كود الإحالة للحصول على مميزات إضافية:</p>
+                    <div id="brokersList">
+                        <!-- سيتم إضافة البروكرز هنا عبر JavaScript -->
+                    </div>
+                `
+            },
+            
+            social: {
+                title: "حسابات التواصل الاجتماعي",
+                content: `
+                    <h3 style="margin-bottom: 20px; color: var(--primary-color);">تابعنا على جميع المنصات</h3>
+                    <p style="margin-bottom: 25px;">تواصل معنا عبر منصات التواصل الاجتماعي للحصول على آخر التحديثات، النصائح المجانية، والدروس الحصرية:</p>
+                    <div class="social-icons" id="socialIcons">
+                        <!-- سيتم إضافة أيقونات وسائل التواصل هنا عبر JavaScript -->
+                    </div>
+                `
+            }
+        };
+
+        // بيانات الدروس
+        const lessons = {
+            basics: [
+                { name: "مقدمة تعريفية", link: "https://t.me/ebraheemsnaibr/54" },
+                { name: "المحاضرة الأولى", link: "https://t.me/ebraheemsnaibr/2634" },
+                { name: "المحاضرة الثانية", link: "https://t.me/ebraheemsnaibr/2642" },
+                { name: "المحاضرة الثالثة", link: "https://t.me/ebraheemsnaibr/2651" },
+                { name: "تسجيل مهم جدًا", link: "https://t.me/ebraheemsnaibr/5347" },
+                { name: "الدرس الرابع", link: "https://t.me/ebraheemsnaibr/2693" },
+                { name: "كيفية تأمين الربح", link: "https://t.me/ebraheemsnaibr/397" },
+                { name: "كيفية تطبيق التوصيات", link: "https://t.me/ebraheemsnaibr/1887" },
+                { name: "كيفية فتح حساب تجريبي على MT5", link: "https://t.me/ebraheemsnaibr/265" }
+            ],
+            
+            technical: [
+                { name: "الدرس الأول", link: "https://t.me/ebraheemsnaibr/2698" },
+                { name: "الدرس الثاني", link: "https://t.me/ebraheemsnaibr/2721" },
+                { name: "الدرس الثالث", link: "https://t.me/ebraheemsnaibr/2767" },
+                { name: "الدرس الرابع", link: "https://t.me/ebraheemsnaibr/2783" },
+                { name: "الدرس الخامس", link: "https://youtu.be/dvQiiYAX5r8?si=JAqKncyB9VTWRf1G" },
+                { name: "الدرس السادس", link: "https://www.youtube.com/watch?v=CqrfenPl5oQ" },
+                { name: "الدرس السابع", link: "https://youtu.be/DJLMTyWyCp4" },
+                { name: "الدرس الثامن", link: "https://youtu.be/7b5pms_geLM?si=i7nv_0miqMgwtBhs" },
+                { name: "الدرس التاسع", link: "https://youtu.be/5Qs03Lh7FvA?si=ETg4OLN-qTYjjEnR" },
+                { name: "الدرس العاشر", link: "https://youtu.be/0dpWbWZANzQ?si=lO9wkFR1_WgomHu3" },
+                { name: "الدرس الحادي عشر – الفيبوناتشي", link: "https://youtu.be/Yoq6ND3k3WM?si=IGIKG_oGNxhFs97n" },
+                { name: "الدرس الثاني عشر – هيكلية السوق", link: "https://youtu.be/8znydjpep4Y?si=VUbaU8cB20A4PFpp" },
+                { name: "الدرس الثالث عشر – دخول وخروج الصفقات", link: "https://youtu.be/NmGx8pWtFvg" }
+            ]
+        };
+
+        // بيانات البروكرز
+        const brokers = [
+            {
+                name: "بروكر 1",
+                image: "https://i.ibb.co/C34CN5Hq/image.jpg",
+                regLink: "https://example.com/broker1",
+                refCode: "BRAHEEM100",
+                notes: "هذا البروكر يوفر سبريد منخفض ودعم عربي",
+                tutorialLink: "https://t.me/ebraheemsnaibr/265"
+            },
+            {
+                name: "بروكر 2",
+                image: "https://i.ibb.co/C34CN5Hq/image.jpg",
+                regLink: "https://example.com/broker2",
+                refCode: "ABOHAFEZ200",
+                notes: "بروكر دولي مرخص مع سرعة في التنفيذ",
+                tutorialLink: "https://t.me/ebraheemsnaibr/265"
+            },
+            {
+                name: "بروكر 3",
+                image: "https://i.ibb.co/C34CN5Hq/image.jpg",
+                regLink: "https://example.com/broker3",
+                refCode: "EBSNIPER300",
+                notes: "أنسب للمتداولين المتقدمين مع منصة متطورة",
+                tutorialLink: "https://t.me/ebraheemsnaibr/265"
+            }
+        ];
+
+        // بيانات وسائل التواصل الاجتماعي
+        const socialMedia = [
+            { name: "يوتيوب", icon: "fab fa-youtube", class: "youtube", link: "https://youtube.com/@ebsniperfx?si=mrKhBJrAd7NesRCU" },
+            { name: "إنستغرام", icon: "fab fa-instagram", class: "instagram", link: "https://www.instagram.com/ebsniperfx?igsh=a3NhOTF5aHV3azYy" },
+            { name: "تيك توك", icon: "fab fa-tiktok", class: "tiktok", link: "https://www.tiktok.com/@ebsniperfx1?_t=ZS-8zLNcuynO1w&_r=1" },
+            { name: "تويتر", icon: "fab fa-twitter", class: "twitter", link: "https://x.com/ebsniperfx1?t=q1Hkf03wz-vnRUUzOLrAjg&s=09" },
+            { name: "فيسبوك", icon: "fab fa-facebook", class: "facebook", link: "https://www.facebook.com/share/14xqjTWLNi/" },
+            { name: "سناب شات", icon: "fab fa-snapchat", class: "snapchat", link: "https://www.snapchat.com/add/sniper77i7?share_id=Qp0OZAeUdw0&locale=ar-AE" },
+            { name: "تلغرام", icon: "fab fa-telegram", class: "telegram", link: "https://t.me/ebsniperfx" },
+            { name: "تلغرام فوركس", icon: "fab fa-telegram", class: "telegram", link: "https://t.me/ebraheemsnaibr" },
+            { name: "تلغرام كريبتو", icon: "fab fa-telegram", class: "telegram", link: "https://t.me/CryptoAbuHafez" },
+            { name: "جروب الدردشة", icon: "fas fa-comments", class: "telegram", link: "https://t.me/+sqbRQJW0Vq0xOTE8" }
+        ];
+
+        // عناصر DOM
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalContent = document.getElementById('modalContent');
+        const openModalButtons = document.querySelectorAll('.open-modal');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        const copyAlert = document.getElementById('copyAlert');
+        const currentYearSpan = document.getElementById('currentYear');
+
+        // تهيئة السنة الحالية في الفوتر
+        if (currentYearSpan) {
+            currentYearSpan.textContent = new Date().getFullYear();
+        }
+
+        // دالة لفتح المودال
+        function openModal(section) {
+            const data = siteData[section];
+            if (!data) return;
+            
+            // إنشاء محتوى المودال
+            modalContent.innerHTML = `
+                <div class="modal-header">
+                    <h3>${data.title}</h3>
+                    <button class="modal-close" id="closeModal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ${data.content}
+                </div>
+            `;
+            
+            // إضافة محتوى ديناميكي حسب القسم
+            if (section === 'trading') {
+                // إضافة دروس المرحلة الأولى
+                const basicsLessonsContainer = document.getElementById('basicsLessons');
+                basicsLessonsContainer.innerHTML = '';
+                lessons.basics.forEach(lesson => {
+                    basicsLessonsContainer.innerHTML += `
+                        <div class="lesson-item">
+                            <div>
+                                <h4>${lesson.name}</h4>
+                            </div>
+                            <a href="${lesson.link}" target="_blank" class="btn btn-accent">انقر هنا للمشاهدة</a>
+                        </div>
+                    `;
+                });
+                
+                // إضافة دروس المرحلة الثانية
+                const technicalLessonsContainer = document.getElementById('technicalLessons');
+                technicalLessonsContainer.innerHTML = '';
+                lessons.technical.forEach(lesson => {
+                    technicalLessonsContainer.innerHTML += `
+                        <div class="lesson-item">
+                            <div>
+                                <h4>${lesson.name}</h4>
+                            </div>
+                            <a href="${lesson.link}" target="_blank" class="btn btn-accent">انقر هنا للمشاهدة</a>
+                        </div>
+                    `;
+                });
+                
+                // إضافة وظيفة التبويب
+                setupTabs();
+                
+            } else if (section === 'vip') {
+                // إضافة قائمة البروكرز
+                const brokersList = document.getElementById('brokersList');
+                brokersList.innerHTML = '';
+                brokers.forEach(broker => {
+                    brokersList.innerHTML += `
+                        <div class="broker-item">
+                            <div class="broker-header">
+                                <img src="${broker.image}" alt="${broker.name}" class="broker-image">
+                                <h4 style="font-size: 1.2rem;">${broker.name}</h4>
+                            </div>
+                            <div class="broker-actions">
+                                <a href="${broker.regLink}" target="_blank" class="btn">انقر هنا للتسجيل</a>
+                                <button class="copy-btn" data-code="${broker.refCode}">انقر لنسخ الكود</button>
+                                <a href="${broker.tutorialLink}" target="_blank" class="btn btn-primary">شرح فتح الحساب</a>
+                            </div>
+                            ${broker.notes ? `<div class="broker-note">${broker.notes}</div>` : ''}
+                        </div>
+                    `;
+                });
+                
+                // إضافة وظيفة نسخ الأكواد
+                setupCopyButtons();
+                
+            } else if (section === 'social') {
+                // إضافة أيقونات وسائل التواصل
+                const socialIconsContainer = document.getElementById('socialIcons');
+                socialIconsContainer.innerHTML = '';
+                socialMedia.forEach(social => {
+                    socialIconsContainer.innerHTML += `
+                        <a href="${social.link}" target="_blank" class="social-icon">
+                            <i class="${social.icon} ${social.class}"></i>
+                            <span>${social.name}</span>
+                        </a>
+                    `;
+                });
+            }
+            
+            // إظهار المودال
+            modalOverlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // إضافة حدث الإغلاق
+            document.getElementById('closeModal').addEventListener('click', closeModal);
+        }
+
+        // دالة لإغلاق المودال
+        function closeModal() {
+            modalOverlay.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // دالة لإعداد التبويبات
+        function setupTabs() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // إزالة النشاط من جميع الأزرار
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    // إضافة النشاط للزر المختار
+                    btn.classList.add('active');
+                    
+                    // إخفاء جميع المحتويات
+                    document.querySelectorAll('.tab-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    // إظهار المحتوى المطلوب
+                    const tabId = btn.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        }
+
+        // دالة لإعداد أزرار النسخ
+        function setupCopyButtons() {
+            const copyButtons = document.querySelectorAll('.copy-btn');
+            
+            copyButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const code = button.getAttribute('data-code');
+                    
+                    // نسخ النص إلى الحافظة
+                    navigator.clipboard.writeText(code).then(() => {
+                        // إظهار التنبيه
+                        copyAlert.style.display = 'block';
+                        setTimeout(() => {
+                            copyAlert.style.display = 'none';
+                        }, 3000);
+                        
+                        // تغيير نص الزر مؤقتاً
+                        const originalText = button.textContent;
+                        button.textContent = 'تم النسخ!';
+                        button.classList.add('copied');
+                        
+                        setTimeout(() => {
+                            button.textContent = originalText;
+                            button.classList.remove('copied');
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('فشل نسخ النص: ', err);
+                        alert('تعذر نسخ الكود، يرجى المحاولة مرة أخرى');
+                    });
+                });
+            });
+        }
+
+        // إضافة أحداث لأزرار فتح المودال
+        openModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const card = button.closest('.section-card');
+                const section = card.getAttribute('data-section');
+                openModal(section);
+            });
+        });
+
+        // إغلاق المودال عند النقر خارج المحتوى
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+
+        // إغلاق المودال بمفتاح Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // إضافة حدث لقائمة الهاتف المتحرك
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mainNav.classList.toggle('show');
+            });
+        }
+
+        // إغلاق قائمة الهاتف المتحرك عند النقر على رابط
+        document.querySelectorAll('#mainNav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('show');
+            });
+        });
+
+        // تهيئة الموقع عند التحميل
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('تم تحميل موقع إبراهيم أبو حافظ بنجاح!');
+        });
+    </script>
+</body>
+</html>
