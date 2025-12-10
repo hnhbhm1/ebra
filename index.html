@@ -1,24 +1,27 @@
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إبراهيم أبو حافظ - منصة تعليم التداول</title>
+    <title>إبراهيم أبو حافظ - تعليم التداول والفوركس</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1a365d;
-            --secondary-color: #d69e2e;
-            --accent-color: #38b2ac;
-            --light-color: #f7fafc;
-            --dark-color: #2d3748;
-            --success-color: #38a169;
-            --hover-color: #2b6cb0;
+            --primary: #1a3a8f;
+            --secondary: #f0b90b;
+            --accent: #00b894;
+            --light: #f8f9fa;
+            --dark: #1a1a2e;
+            --gray: #6c757d;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --border-radius: 10px;
         }
 
@@ -26,26 +29,26 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
         }
 
         body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: #f5f7fa;
-            color: var(--dark-color);
+            background-color: #f5f7fb;
+            color: #333;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
         .container {
-            width: 100%;
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
 
         /* Header Styles */
         header {
-            background: linear-gradient(135deg, var(--primary-color), #2c5282);
+            background: linear-gradient(135deg, var(--primary) 0%, #0d1b4c 100%);
             color: white;
             padding: 20px 0;
             box-shadow: var(--shadow);
@@ -58,92 +61,163 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
 
-        .logo-section {
+        .logo {
             display: flex;
             align-items: center;
             gap: 15px;
+        }
+
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid var(--secondary);
+            overflow: hidden;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
         }
 
         .logo-text h1 {
             font-size: 1.8rem;
             font-weight: 800;
             margin-bottom: 5px;
-            color: white;
         }
 
-        .logo-text h2 {
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: var(--secondary-color);
+        .logo-text p {
+            font-size: 1rem;
+            opacity: 0.9;
         }
 
-        .logo-icon {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-        }
-
-        /* Navigation */
-        nav ul {
+        .nav-links {
             display: flex;
             list-style: none;
-            gap: 20px;
+            gap: 25px;
         }
 
-        nav ul li a {
+        .nav-links a {
             color: white;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 1.1rem;
             padding: 8px 15px;
-            border-radius: 30px;
+            border-radius: 5px;
             transition: var(--transition);
         }
 
-        nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: var(--secondary-color);
+        .nav-links a:hover,
+        .nav-links a.active {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: var(--secondary);
         }
 
         .mobile-menu-btn {
             display: none;
+            font-size: 1.5rem;
             background: none;
             border: none;
             color: white;
-            font-size: 1.5rem;
             cursor: pointer;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.8)), url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            padding: 100px 0;
+            background: linear-gradient(rgba(26, 58, 143, 0.9), rgba(13, 27, 76, 0.9)), url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
-            padding: 80px 20px;
-            margin-bottom: 60px;
         }
 
-        .hero h1 {
-            font-size: 2.5rem;
+        .hero h2 {
+            font-size: 3rem;
             margin-bottom: 20px;
             font-weight: 800;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             max-width: 700px;
             margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(240, 185, 11, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(240, 185, 11, 0.4);
+            background-color: #ffd43b;
         }
 
         /* Main Sections */
         .sections-container {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 4px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            right: 15%;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .sections-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
-            margin-bottom: 80px;
         }
 
         .section-card {
@@ -157,11 +231,11 @@
 
         .section-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
         .card-header {
-            background-color: var(--primary-color);
+            background-color: var(--primary);
             color: white;
             padding: 25px;
             text-align: center;
@@ -170,11 +244,10 @@
         .card-header i {
             font-size: 2.5rem;
             margin-bottom: 15px;
-            color: var(--secondary-color);
         }
 
         .card-header h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
         }
 
@@ -183,400 +256,361 @@
         }
 
         .card-body p {
-            color: #4a5568;
+            color: var(--gray);
+            font-size: 1.1rem;
             margin-bottom: 20px;
         }
 
         .card-footer {
             padding: 0 25px 25px;
-            text-align: center;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: #b8860b;
-            color: white;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--hover-color);
-        }
-
-        .btn-accent {
-            background-color: var(--accent-color);
-        }
-
-        .btn-accent:hover {
-            background-color: #2c9c96;
-        }
-
-        /* Modal Styles */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: none;
+            display: flex;
             justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            padding: 20px;
         }
 
-        .modal {
+        .view-btn {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .view-btn:hover {
+            background-color: #00a085;
+            transform: scale(1.05);
+        }
+
+        /* Section Details */
+        .section-details {
+            display: none;
             background-color: white;
             border-radius: var(--border-radius);
-            width: 100%;
-            max-width: 900px;
-            max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            animation: modalFadeIn 0.3s ease-out;
+            padding: 40px;
+            margin-top: 30px;
+            box-shadow: var(--shadow);
         }
 
-        @keyframes modalFadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
+        .section-details.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .modal-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 20px 25px;
+        .details-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
         }
 
-        .modal-header h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
+        .details-header h3 {
+            font-size: 2rem;
+            color: var(--primary);
         }
 
-        .modal-close {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .modal-close:hover {
-            color: var(--secondary-color);
-        }
-
-        .modal-body {
-            padding: 25px;
-        }
-
-        /* Tabs */
-        .tabs {
-            display: flex;
-            border-bottom: 2px solid #e2e8f0;
-            margin-bottom: 25px;
-        }
-
-        .tab-btn {
-            background: none;
-            border: none;
-            padding: 12px 25px;
-            font-size: 1rem;
-            font-weight: 700;
-            color: #718096;
-            cursor: pointer;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .tab-btn.active {
-            color: var(--primary-color);
-        }
-
-        .tab-btn.active::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            right: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--primary-color);
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        /* Lesson Items */
-        .lesson-item {
+        .close-details {
             background-color: #f8f9fa;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-right: 4px solid var(--accent-color);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            color: var(--gray);
+            cursor: pointer;
+            transition: var(--transition);
         }
 
-        .lesson-item h4 {
-            font-weight: 700;
-            color: var(--dark-color);
-            margin-bottom: 5px;
+        .close-details:hover {
+            background-color: #e9ecef;
+            color: var(--danger);
         }
 
-        /* Broker Items */
-        .broker-item {
+        .lesson-list, .broker-list {
+            list-style: none;
+        }
+
+        .lesson-item, .broker-item {
             background-color: #f8f9fa;
             border-radius: 8px;
             padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid #e2e8f0;
+            margin-bottom: 15px;
+            border-right: 5px solid var(--primary);
+            transition: var(--transition);
         }
 
-        .broker-header {
+        .lesson-item:hover, .broker-item:hover {
+            background-color: #e9ecef;
+            transform: translateX(-5px);
+        }
+
+        .lesson-title, .broker-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 10px;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-            gap: 15px;
+        }
+
+        .lesson-link, .broker-link, .copy-code {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .lesson-link:hover, .broker-link:hover {
+            background-color: #ffd43b;
+            transform: translateY(-3px);
+        }
+
+        .copy-code {
+            background-color: var(--accent);
+            color: white;
+            margin-right: 10px;
+        }
+
+        .copy-code:hover {
+            background-color: #00a085;
+        }
+
+        .broker-info {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+            margin-top: 15px;
         }
 
         .broker-image {
-            width: 120px;
-            height: 60px;
-            object-fit: contain;
-            border-radius: 5px;
-        }
-
-        .broker-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .broker-note {
-            background-color: #fff3cd;
-            border-right: 4px solid #ffc107;
-            padding: 12px;
-            border-radius: 5px;
-            margin-top: 15px;
-            font-size: 0.9rem;
-        }
-
-        /* Social Media Icons */
-        .social-icons {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-icon {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: white;
-            padding: 20px 15px;
+            width: 100%;
             border-radius: 8px;
-            text-decoration: none;
-            color: var(--dark-color);
+            overflow: hidden;
+        }
+
+        .broker-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-item {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
             transition: var(--transition);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: #333;
         }
 
-        .social-icon:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        .social-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            background-color: white;
         }
 
-        .social-icon i {
-            font-size: 2rem;
+        .social-item i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .social-item h4 {
+            font-size: 1.3rem;
             margin-bottom: 10px;
+            color: var(--primary);
         }
 
-        .social-icon span {
-            font-weight: 700;
+        .social-item p {
+            color: var(--gray);
             font-size: 0.9rem;
         }
-
-        /* Set colors for social media icons */
-        .youtube { color: #FF0000; }
-        .instagram { color: #E4405F; }
-        .tiktok { color: #000000; }
-        .twitter { color: #1DA1F2; }
-        .facebook { color: #1877F2; }
-        .snapchat { color: #FFFC00; }
-        .telegram { color: #0088CC; }
 
         /* Footer */
         footer {
-            background-color: var(--primary-color);
+            background-color: var(--dark);
             color: white;
-            padding: 40px 0 20px;
-            margin-top: 60px;
+            padding: 60px 0 30px;
         }
 
         .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
         }
 
-        .footer-section h4 {
-            font-size: 1.2rem;
+        .footer-logo h3 {
+            font-size: 1.8rem;
             margin-bottom: 15px;
-            color: var(--secondary-color);
+            color: var(--secondary);
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-right: 5px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-contact i {
+            color: var(--secondary);
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            color: #aaa;
             font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
         }
 
-        /* Utility Classes */
-        .copy-btn {
-            background-color: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: 'Tajawal', sans-serif;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            margin-left: 10px;
-        }
-
-        .copy-btn:hover {
-            background-color: #2c9c96;
-        }
-
-        .copy-btn.copied {
-            background-color: var(--success-color);
-        }
-
-        .alert {
-            padding: 12px 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            display: none;
-        }
-
-        .alert-success {
-            background-color: #d1fae5;
-            color: #065f46;
-            border-right: 4px solid #10b981;
-        }
-
-        /* Responsive Styles */
+        /* Responsive Design */
         @media (max-width: 992px) {
-            .sections-container {
-                grid-template-columns: 1fr;
+            .nav-links {
+                gap: 15px;
             }
             
-            nav ul {
-                display: none;
-                width: 100%;
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .sections-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 100px;
+                right: -100%;
                 flex-direction: column;
-                margin-top: 20px;
+                background-color: var(--primary);
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+                z-index: 999;
             }
             
-            nav ul.show {
-                display: flex;
+            .nav-links.active {
+                right: 0;
             }
             
             .mobile-menu-btn {
                 display: block;
             }
             
-            .header-content {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .logo-section {
-                width: 100%;
-                justify-content: space-between;
-            }
-            
-            .hero h1 {
+            .hero h2 {
                 font-size: 2rem;
             }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .broker-info {
+                grid-template-columns: 1fr;
+            }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 576px) {
             .hero {
-                padding: 50px 20px;
+                padding: 70px 0;
             }
             
-            .modal-body {
-                padding: 20px;
+            .sections-grid {
+                grid-template-columns: 1fr;
             }
             
-            .broker-header {
-                flex-direction: column;
-                align-items: flex-start;
+            .section-details {
+                padding: 25px;
             }
             
-            .social-icons {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-content {
-                flex-direction: column;
+            .details-header h3 {
+                font-size: 1.7rem;
             }
         }
 
-        @media (max-width: 480px) {
-            .tabs {
-                flex-direction: column;
-            }
-            
-            .tab-btn {
-                width: 100%;
-                text-align: right;
-            }
-            
-            .lesson-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .lesson-item .btn {
-                margin-top: 10px;
-                align-self: flex-end;
-            }
+        /* Utility Classes */
+        .hidden {
+            display: none !important;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-30 {
+            margin-top: 30px;
+        }
+
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+
+        .primary-color {
+            color: var(--primary);
+        }
+
+        .secondary-color {
+            color: var(--secondary);
         }
     </style>
 </head>
@@ -584,122 +618,184 @@
     <!-- Header -->
     <header>
         <div class="container header-content">
-            <div class="logo-section">
-                <div class="logo-icon">
-                    <i class="fas fa-chart-line"></i>
+            <div class="logo">
+                <div class="logo-img">
+                    <img src="https://i.ibb.co/fzCftgwK/IMG-20251210-014115-828.jpg" alt="إبراهيم أبو حافظ">
                 </div>
                 <div class="logo-text">
                     <h1>إبراهيم أبو حافظ</h1>
-                    <h2>منصة تعليم التداول الاحترافي</h2>
+                    <p>خبير التداول والفوركس</p>
                 </div>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
             </div>
-            <nav>
-                <ul id="mainNav">
-                    <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#trading">التداول</a></li>
-                    <li><a href="#vip">VIP</a></li>
-                    <li><a href="#social">التواصل</a></li>
-                </ul>
-            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">الرئيسية</a></li>
+                <li><a href="#education">التعليم</a></li>
+                <li><a href="#vip">توصيات VIP</a></li>
+                <li><a href="#social">وسائل التواصل</a></li>
+            </ul>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="container">
-            <h1>مرحباً بك في منصة تعليم التداول الاحترافية</h1>
-            <p>ابدأ رحلتك في عالم التداول المالي مع دورات تعليمية احترافية، توصيات مدفوعة مباشرة، ومجتمع نشط من المتداولين المحترفين</p>
-            <a href="#trading" class="btn btn-primary">ابدأ التعلم الآن</a>
+            <h2>مرحبًا بكم في عالم التداول المحترف</h2>
+            <p>أنا إبراهيم أبو حافظ، خبير في التداول والفوركس. أقدم لكم دورات تعليمية منظمة، توصيات VIP حصرية، ودعم متكامل لمساعدتكم في تحقيق النجاح في الأسواق المالية.</p>
+            <a href="#education" class="cta-button">ابدأ رحلتك التعليمية الآن</a>
         </div>
     </section>
 
     <!-- Main Sections -->
-    <main class="container">
-        <!-- Alert for copied text -->
-        <div class="alert alert-success" id="copyAlert">
-            تم نسخ الكود بنجاح!
-        </div>
-
-        <div class="sections-container" id="sectionsContainer">
-            <!-- Section 1: New to Trading -->
-            <div class="section-card" data-section="trading">
-                <div class="card-header">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>إذا كنت جديد على مجال التداول</h3>
+    <section class="sections-container">
+        <div class="container">
+            <div class="section-title">
+                <h2>أقسام الموقع</h2>
+                <p>اختر القسم الذي تريد استكشافه للحصول على المعلومات الكاملة</p>
+            </div>
+            
+            <div class="sections-grid">
+                <!-- Education Section Card -->
+                <div class="section-card" data-section="education">
+                    <div class="card-header">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>دورات تعليمية للمبتدئين</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>إذا كنت جديدًا على مجال التداول، فهذا القسم مخصص لك. نقدم مواد تعليمية منظمة لمساعدتك في بدء رحلتك التعليمية بشكل صحيح.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="view-btn">عرض التفاصيل</button>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p>ابدأ رحلتك في عالم التداول مع دورة متكاملة تغطي جميع الأساسيات والمفاهيم المهمة، ثم انتقل إلى مستوى متقدم في التحليل الفني.</p>
-                    <p>الدورة مقسمة إلى مرحلتين: الأساسيات والتحليل الفني، مع دروس عملية وتمارين تطبيقية.</p>
+                
+                <!-- VIP Section Card -->
+                <div class="section-card" data-section="vip">
+                    <div class="card-header">
+                        <i class="fas fa-crown"></i>
+                        <h3>انضم إلى توصيات VIP</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>انضم إلى جروب التوصيات VIP واحصل على إرشادات احترافية، تحليلات حصرية، ودعم كامل من خلال أفضل البروكرز في السوق.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="view-btn">عرض التفاصيل</button>
+                    </div>
                 </div>
-                <div class="card-footer">
-                    <a class="btn open-modal">استعرض الدروس</a>
+                
+                <!-- Social Media Section Card -->
+                <div class="section-card" data-section="social">
+                    <div class="card-header">
+                        <i class="fas fa-share-alt"></i>
+                        <h3>وسائل التواصل الاجتماعي</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>تواصل معنا عبر جميع منصات التواصل الاجتماعي لتحصل على أحدث التحليلات، النصائح، والمحتوى التعليمي الحصري.</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="view-btn">عرض التفاصيل</button>
+                    </div>
                 </div>
             </div>
-
-            <!-- Section 2: VIP Recommendations -->
-            <div class="section-card" data-section="vip">
-                <div class="card-header">
-                    <i class="fas fa-crown"></i>
-                    <h3>VIP - جروب التوصيات المدفوعة</h3>
+            
+            <!-- Education Section Details -->
+            <div class="section-details" id="education-details">
+                <div class="details-header">
+                    <h3>دورات تعليمية للمبتدئين</h3>
+                    <button class="close-details"><i class="fas fa-times"></i></button>
                 </div>
-                <div class="card-body">
-                    <p>انضم إلى جروب التوصيات المدفوعة واحصل على توصيات حصرية مع شرح كامل لدخول الصفقات، إدارة المخاطر، وجني الأرباح.</p>
-                    <p>احصل على دعم مباشر من المحترفين وكن جزءاً من مجتمع متداولين ناجحين.</p>
-                </div>
-                <div class="card-footer">
-                    <a class="btn btn-primary open-modal">عرض البروكرز والتسجيل</a>
+                
+                <div class="details-content">
+                    <p class="mb-30"><strong>إذا كنت جديد على مجال التداول!</strong><br>
+                    نرحّب بكم ونقدّم لكم المواد الأساسية المنظمة لمساعدتكم في بدء رحلتكم التعليميّة بشكل صحيح. يرجى متابعة الدروس بالترتيب لضمان فهم أفضل.</p>
+                    
+                    <h4 class="primary-color mb-20">المرحلة الأولى – الأساسيات</h4>
+                    <ul class="lesson-list">
+                        <!-- Lessons will be added dynamically by JavaScript -->
+                    </ul>
+                    
+                    <h4 class="primary-color mb-20 mt-30">المرحلة الثانية – التحليل الفني</h4>
+                    <ul class="lesson-list" id="technical-lessons">
+                        <!-- Technical lessons will be added dynamically by JavaScript -->
+                    </ul>
                 </div>
             </div>
-
-            <!-- Section 3: Social Media -->
-            <div class="section-card" data-section="social">
-                <div class="card-header">
-                    <i class="fas fa-hashtag"></i>
-                    <h3>حسابات السوشيال ميديا</h3>
+            
+            <!-- VIP Section Details -->
+            <div class="section-details" id="vip-details">
+                <div class="details-header">
+                    <h3>انضم إلى توصيات VIP</h3>
+                    <button class="close-details"><i class="fas fa-times"></i></button>
                 </div>
-                <div class="card-body">
-                    <p>تابع قنوات التواصل الاجتماعي للحصول على تحديثات يومية، تحليلات السوق، ونصائح مجانية.</p>
-                    <p>تواصل مع مجتمع المتداولين عبر مختلف المنصات وكن على اطلاع دائم بكل جديد.</p>
+                
+                <div class="details-content">
+                    <p class="mb-30">انضم إلى جروب التوصيات VIP واحصل على إرشادات احترافية، تحليلات حصرية، ودعم كامل من خلال أفضل البروكرز في السوق. اختر البروكر المناسب لك من القائمة أدناه:</p>
+                    
+                    <ul class="broker-list">
+                        <!-- Brokers will be added dynamically by JavaScript -->
+                    </ul>
+                    
+                    <div class="contact-support mt-30">
+                        <h4 class="primary-color mb-20">للمساعدة والتسجيل</h4>
+                        <p>لأي استفسار أو دعم أثناء التسجيل:</p>
+                        <div class="broker-item">
+                            <div class="broker-title">
+                                <span>Telegram: @ebsniperfx</span>
+                            </div>
+                            <a href="https://t.me/ebsniperfx" target="_blank" class="broker-link">انقر هنا للتواصل</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-footer">
-                    <a class="btn btn-accent open-modal">عرض جميع الحسابات</a>
+            </div>
+            
+            <!-- Social Media Section Details -->
+            <div class="section-details" id="social-details">
+                <div class="details-header">
+                    <h3>وسائل التواصل الاجتماعي</h3>
+                    <button class="close-details"><i class="fas fa-times"></i></button>
+                </div>
+                
+                <div class="details-content">
+                    <p class="mb-30">تابعنا على جميع منصات التواصل الاجتماعي للحصول على أحدث التحليلات، النصائح، والمحتوى التعليمي الحصري:</p>
+                    
+                    <div class="social-grid">
+                        <!-- Social media links will be added dynamically by JavaScript -->
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
-
-    <!-- Modal Structure -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal" id="modalContent">
-            <!-- Modal content will be inserted here by JavaScript -->
-        </div>
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h4>إبراهيم أبو حافظ</h4>
-                    <p>منصة تعليم التداول الاحترافي، تقديم محتوى تعليمي عالي الجودة وتوصيات مدفوعة للمتداولين العرب.</p>
+                <div class="footer-logo">
+                    <h3>إبراهيم أبو حافظ</h3>
+                    <p>خبير تداول معتمد، أقدم دورات تعليمية وتحليلات فنية احترافية في مجال الفوركس والأسواق المالية.</p>
                 </div>
-                <div class="footer-section">
+                
+                <div class="footer-links">
                     <h4>روابط سريعة</h4>
-                    <ul style="list-style: none;">
-                        <li><a href="#trading" style="color: white; text-decoration: none;">دروس التداول</a></li>
-                        <li><a href="#vip" style="color: white; text-decoration: none;">جروب VIP</a></li>
-                        <li><a href="#social" style="color: white; text-decoration: none;">وسائل التواصل</a></li>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#education">الدورات التعليمية</a></li>
+                        <li><a href="#vip">توصيات VIP</a></li>
+                        <li><a href="#social">وسائل التواصل</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h4>التواصل</h4>
-                    <p>للأسئلة والاستفسارات:</p>
-                    <p>راسلنا على قنوات التواصل الاجتماعي</p>
+                
+                <div class="footer-contact">
+                    <h4>تواصل معنا</h4>
+                    <p><i class="fab fa-telegram"></i> Telegram: @ebsniperfx</p>
+                    <p><i class="fas fa-envelope"></i> البريد الإلكتروني: info@example.com</p>
                 </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>جميع الحقوق محفوظة &copy; إبراهيم أبو حافظ <span id="currentYear"></span></p>
             </div>
@@ -707,341 +803,494 @@
     </footer>
 
     <script>
-        // البيانات الأساسية للموقع
-        const siteData = {
-            trading: {
-                title: "دروس التداول للمبتدئين",
-                content: `
-                    <div class="tabs">
-                        <button class="tab-btn active" data-tab="basics">المرحلة الأولى - الأساسيات</button>
-                        <button class="tab-btn" data-tab="technical">المرحلة الثانية - التحليل الفني</button>
-                    </div>
-                    
-                    <div class="tab-content active" id="basics">
-                        <h3 style="margin-bottom: 20px; color: var(--primary-color);">المرحلة الأولى: أساسيات التداول</h3>
-                        <div id="basicsLessons">
-                            <!-- سيتم إضافة الدروس هنا عبر JavaScript -->
-                        </div>
-                    </div>
-                    
-                    <div class="tab-content" id="technical">
-                        <h3 style="margin-bottom: 20px; color: var(--primary-color);">المرحلة الثانية: التحليل الفني</h3>
-                        <div id="technicalLessons">
-                            <!-- سيتم إضافة الدروس هنا عبر JavaScript -->
-                        </div>
-                    </div>
-                `
+        // البيانات الخاصة بالدروس التعليمية
+        const basicLessons = [
+            {
+                title: "مقدمة تعريفية",
+                link: "https://t.me/ebraheemsnaibr/54"
             },
-            
-            vip: {
-                title: "جروب التوصيات المدفوعة VIP",
-                content: `
-                    <h3 style="margin-bottom: 20px; color: var(--primary-color);">البــروكــرز المعتمدة</h3>
-                    <p style="margin-bottom: 25px;">اختر أحد البروكرز التالية واشترك باستخدام كود الإحالة للحصول على مميزات إضافية:</p>
-                    <div id="brokersList">
-                        <!-- سيتم إضافة البروكرز هنا عبر JavaScript -->
-                    </div>
-                `
+            {
+                title: "المحاضرة الأولى",
+                link: "https://t.me/ebraheemsnaibr/2634"
             },
-            
-            social: {
-                title: "حسابات التواصل الاجتماعي",
-                content: `
-                    <h3 style="margin-bottom: 20px; color: var(--primary-color);">تابعنا على جميع المنصات</h3>
-                    <p style="margin-bottom: 25px;">تواصل معنا عبر منصات التواصل الاجتماعي للحصول على آخر التحديثات، النصائح المجانية، والدروس الحصرية:</p>
-                    <div class="social-icons" id="socialIcons">
-                        <!-- سيتم إضافة أيقونات وسائل التواصل هنا عبر JavaScript -->
-                    </div>
-                `
+            {
+                title: "المحاضرة الثانية",
+                link: "https://t.me/ebraheemsnaibr/2642"
+            },
+            {
+                title: "المحاضرة الثالثة",
+                link: "https://t.me/ebraheemsnaibr/2651"
+            },
+            {
+                title: "تسجيل مهم جدًا",
+                link: "https://t.me/ebraheemsnaibr/5347"
+            },
+            {
+                title: "الدرس الرابع",
+                link: "https://t.me/ebraheemsnaibr/2693"
+            },
+            {
+                title: "كيفية تأمين الربح",
+                link: "https://t.me/ebraheemsnaibr/397"
+            },
+            {
+                title: "كيفية تطبيق التوصيات",
+                link: "https://t.me/ebraheemsnaibr/1887"
+            },
+            {
+                title: "كيفية فتح حساب تجريبي على MT5",
+                link: "https://t.me/ebraheemsnaibr/265"
             }
-        };
+        ];
 
-        // بيانات الدروس
-        const lessons = {
-            basics: [
-                { name: "مقدمة تعريفية", link: "https://t.me/ebraheemsnaibr/54" },
-                { name: "المحاضرة الأولى", link: "https://t.me/ebraheemsnaibr/2634" },
-                { name: "المحاضرة الثانية", link: "https://t.me/ebraheemsnaibr/2642" },
-                { name: "المحاضرة الثالثة", link: "https://t.me/ebraheemsnaibr/2651" },
-                { name: "تسجيل مهم جدًا", link: "https://t.me/ebraheemsnaibr/5347" },
-                { name: "الدرس الرابع", link: "https://t.me/ebraheemsnaibr/2693" },
-                { name: "كيفية تأمين الربح", link: "https://t.me/ebraheemsnaibr/397" },
-                { name: "كيفية تطبيق التوصيات", link: "https://t.me/ebraheemsnaibr/1887" },
-                { name: "كيفية فتح حساب تجريبي على MT5", link: "https://t.me/ebraheemsnaibr/265" }
-            ],
-            
-            technical: [
-                { name: "الدرس الأول", link: "https://t.me/ebraheemsnaibr/2698" },
-                { name: "الدرس الثاني", link: "https://t.me/ebraheemsnaibr/2721" },
-                { name: "الدرس الثالث", link: "https://t.me/ebraheemsnaibr/2767" },
-                { name: "الدرس الرابع", link: "https://t.me/ebraheemsnaibr/2783" },
-                { name: "الدرس الخامس", link: "https://youtu.be/dvQiiYAX5r8?si=JAqKncyB9VTWRf1G" },
-                { name: "الدرس السادس", link: "https://www.youtube.com/watch?v=CqrfenPl5oQ" },
-                { name: "الدرس السابع", link: "https://youtu.be/DJLMTyWyCp4" },
-                { name: "الدرس الثامن", link: "https://youtu.be/7b5pms_geLM?si=i7nv_0miqMgwtBhs" },
-                { name: "الدرس التاسع", link: "https://youtu.be/5Qs03Lh7FvA?si=ETg4OLN-qTYjjEnR" },
-                { name: "الدرس العاشر", link: "https://youtu.be/0dpWbWZANzQ?si=lO9wkFR1_WgomHu3" },
-                { name: "الدرس الحادي عشر – الفيبوناتشي", link: "https://youtu.be/Yoq6ND3k3WM?si=IGIKG_oGNxhFs97n" },
-                { name: "الدرس الثاني عشر – هيكلية السوق", link: "https://youtu.be/8znydjpep4Y?si=VUbaU8cB20A4PFpp" },
-                { name: "الدرس الثالث عشر – دخول وخروج الصفقات", link: "https://youtu.be/NmGx8pWtFvg" }
-            ]
-        };
+        const technicalLessons = [
+            {
+                title: "الدرس الأول",
+                link: "https://t.me/ebraheemsnaibr/2698"
+            },
+            {
+                title: "الدرس الثاني",
+                link: "https://t.me/ebraheemsnaibr/2721"
+            },
+            {
+                title: "الدرس الثالث",
+                link: "https://t.me/ebraheemsnaibr/2767"
+            },
+            {
+                title: "الدرس الرابع",
+                link: "https://t.me/ebraheemsnaibr/2783"
+            },
+            {
+                title: "الدرس الخامس",
+                link: "https://youtu.be/dvQiiYAX5r8?si=JAqKncyB9VTWRf1G"
+            },
+            {
+                title: "الدرس السادس",
+                link: "https://www.youtube.com/watch?v=CqrfenPl5oQ"
+            },
+            {
+                title: "الدرس السابع",
+                link: "https://youtu.be/DJLMTyWyCp4"
+            },
+            {
+                title: "الدرس الثامن",
+                link: "https://youtu.be/7b5pms_geLM?si=i7nv_0miqMgwtBhs"
+            },
+            {
+                title: "الدرس التاسع",
+                link: "https://youtu.be/5Qs03Lh7FvA?si=ETg4OLN-qTYjjEnR"
+            },
+            {
+                title: "الدرس العاشر",
+                link: "https://youtu.be/0dpWbWZANzQ?si=lO9wkFR1_WgomHu3"
+            },
+            {
+                title: "الدرس الحادي عشر – الفيبوناتشي",
+                link: "https://youtu.be/Yoq6ND3k3WM?si=IGIKG_oGNxhFs97n"
+            },
+            {
+                title: "الدرس الثاني عشر – هيكلية السوق",
+                link: "https://youtu.be/8znydjpep4Y?si=VUbaU8cB20A4PFpp"
+            },
+            {
+                title: "الدرس الثالث عشر – استراتيجية دخول وخروج الصفقات",
+                link: "https://youtu.be/NmGx8pWtFvg"
+            }
+        ];
 
         // بيانات البروكرز
         const brokers = [
             {
-                name: "بروكر 1",
-                image: "https://i.ibb.co/C34CN5Hq/image.jpg",
-                regLink: "https://example.com/broker1",
-                refCode: "BRAHEEM100",
-                notes: "هذا البروكر يوفر سبريد منخفض ودعم عربي",
-                tutorialLink: "https://t.me/ebraheemsnaibr/265"
+                name: "البروكر الأول — XM (يدعم MT5)",
+                description: "مناسب لـ: الخليج – العراق – الأردن – المغرب العربي",
+                regLink: "https://clicks.pipaffiliates.com/c?c=1012258&l=ar&p=1",
+                refCode: "DJD9K",
+                tutorialLink: "https://t.me/ebraheemsnaibr/1812",
+                transferLink: "https://t.me/ebraheemsnaibr/2566",
+                image: "https://i.ibb.co/fzCftgwK/IMG-20251210-014115-828.jpg"
             },
             {
-                name: "بروكر 2",
-                image: "https://i.ibb.co/C34CN5Hq/image.jpg",
-                regLink: "https://example.com/broker2",
-                refCode: "ABOHAFEZ200",
-                notes: "بروكر دولي مرخص مع سرعة في التنفيذ",
-                tutorialLink: "https://t.me/ebraheemsnaibr/265"
+                name: "البروكر الثاني — Exness",
+                description: "رابط التسجيل وكود الشريك متاحان، التوثيق: هوية شخصية + إثبات سكن، الدول غير المقبولة: سوريا – اليمن – السودان",
+                regLink: "https://one.exnesstrack.org/a/8to03t7dk8",
+                refCode: "8to03t7dk8",
+                tutorialLink: "",
+                transferLink: "https://t.me/ebraheemsnaibr/3746",
+                image: "https://i.ibb.co/fzCftgwK/IMG-20251210-014115-828.jpg"
             },
             {
-                name: "بروكر 3",
-                image: "https://i.ibb.co/C34CN5Hq/image.jpg",
-                regLink: "https://example.com/broker3",
-                refCode: "EBSNIPER300",
-                notes: "أنسب للمتداولين المتقدمين مع منصة متطورة",
-                tutorialLink: "https://t.me/ebraheemsnaibr/265"
+                name: "البروكر الثالث — TOPFX (MT4 / MT5)",
+                description: "ملاحظات: اليمن: رفع كشف حساب كريمي كبديل لإثبات السكن، سوريا: ورقة مختار في حال عدم وجود إثبات سكن",
+                regLink: "https://signup.topfx.com.sc/Registration/Main/Account?dest=live&camp=10561",
+                refCode: "10561",
+                tutorialLink: "https://youtu.be/oKfH9gF-2Oc?si=AUjqv18OI4cKtuoy",
+                transferLink: "",
+                bonusInfo: "طريقة الحصول على البونص في TOPFX للـ MT5: https://t.me/ebraheemsnaibr/5923",
+                image: "https://i.ibb.co/fzCftgwK/IMG-20251210-014115-828.jpg"
+            },
+            {
+                name: "البروكر الرابع — XS (يدعم MT5)",
+                description: "ملاحظة: إيداع أكثر من 5000 دولار يمنح بطاقة سحب.",
+                regLink: "https://my.xs.com/links/go/1273",
+                refCode: "",
+                tutorialLink: "",
+                transferLink: "",
+                image: "https://i.ibb.co/fzCftgwK/IMG-20251210-014115-828.jpg"
+            },
+            {
+                name: "البروكر الخامس — NEEX (يدعم MT5)",
+                description: "لا يحتاج إثبات سكن (يمكن رفع الهوية بدلًا عن إثبات السكن)، بونص 20%",
+                regLink: "https://cp.neex.com/register/index?invitationCode=XZZN7MSQ",
+                refCode: "XZZN7MSQ",
+                tutorialLink: "https://t.me/ebraheemsnaibr/1732",
+                transferLink: "",
+                mt5Link: "https://t.me/ebraheemsnaibr/3906",
+                image: "https://i.ibb.co/fzCftgwK/IMG-20251210-014115-828.jpg"
+            },
+            {
+                name: "البروكر السادس — JustMarkets (يدعم MT5)",
+                description: "غير متاح لليمن، إثبات السكن إلزامي، سبريد منخفض جدًا",
+                regLink: "https://one.justmarkets.link/a/ej79m0vbte",
+                refCode: "",
+                tutorialLink: "",
+                transferLink: "",
+                image: "https://i.ibb.co/fzCftgwK/IMG-20251210-014115-828.jpg"
+            },
+            {
+                name: "البروكر السابع — XS Trade",
+                description: "مناسب لـ: اليمن – سوريا – السودان – ليبيا، يدعم MT5، التوثيق: أي وثيقة تحمل اسمك (حتى سند حوالة)",
+                regLink: "https://my.xstrades.com/ar/links/go/2692",
+                refCode: "",
+                tutorialLink: "https://t.me/ebraheemsnaibr/3364",
+                transferLink: "",
+                image: "https://i.ibb.co/fzCftgwK/IMG-20251210-014115-828.jpg"
+            },
+            {
+                name: "البروكر الثامن — XTB",
+                description: "للمقيمين في الخليج: التسجيل سهل جدًا، للدول العربية: يتطلب هوية + كشف حساب بنكي يحتوي على العنوان، الدول غير المقبولة: اليمن – سوريا – السودان – فلسطين",
+                regLink: "https://link-pso.xtb.com/pso/eri3v",
+                refCode: "",
+                tutorialLink: "https://t.me/ebraheemsnaibr/4158",
+                transferLink: "",
+                bonusInfo: "البونص: 20% حتى 5000 دولار",
+                image: "https://i.ibb.co/fzCftgwK/IMG-20251210-014115-828.jpg"
+            },
+            {
+                name: "البروكر التاسع — MONAXA",
+                description: "المنصات المتاحة: MT4 / MT5 / cTrader، بونص: 100% قابل للتداول — الخسارة حتى 500$",
+                regLink: "https://account.monaxa.com/ar/links/go/18656",
+                refCode: "",
+                tutorialLink: "https://t.me/ebraheemsnaibr/6417",
+                transferLink: "",
+                image: "https://i.ibb.co/fzCftgwK/IMG-20251210-014115-828.jpg"
+            },
+            {
+                name: "البروكر العاشر — OneRoyal",
+                description: "يدعم جميع المنصات، بونص 100% غير قابل للخسارة، حسابات إسلامية + طرق سحب وإيداع سريعة",
+                regLink: "https://vc.cabinet.oneroyal.com/ar/links/go/13208",
+                refCode: "",
+                tutorialLink: "https://t.me/ebraheemsnaibr/6940",
+                transferLink: "",
+                image: "https://i.ibb.co/fzCftgwK/IMG-20251210-014115-828.jpg"
             }
         ];
 
         // بيانات وسائل التواصل الاجتماعي
         const socialMedia = [
-            { name: "يوتيوب", icon: "fab fa-youtube", class: "youtube", link: "https://youtube.com/@ebsniperfx?si=mrKhBJrAd7NesRCU" },
-            { name: "إنستغرام", icon: "fab fa-instagram", class: "instagram", link: "https://www.instagram.com/ebsniperfx?igsh=a3NhOTF5aHV3azYy" },
-            { name: "تيك توك", icon: "fab fa-tiktok", class: "tiktok", link: "https://www.tiktok.com/@ebsniperfx1?_t=ZS-8zLNcuynO1w&_r=1" },
-            { name: "تويتر", icon: "fab fa-twitter", class: "twitter", link: "https://x.com/ebsniperfx1?t=q1Hkf03wz-vnRUUzOLrAjg&s=09" },
-            { name: "فيسبوك", icon: "fab fa-facebook", class: "facebook", link: "https://www.facebook.com/share/14xqjTWLNi/" },
-            { name: "سناب شات", icon: "fab fa-snapchat", class: "snapchat", link: "https://www.snapchat.com/add/sniper77i7?share_id=Qp0OZAeUdw0&locale=ar-AE" },
-            { name: "تلغرام", icon: "fab fa-telegram", class: "telegram", link: "https://t.me/ebsniperfx" },
-            { name: "تلغرام فوركس", icon: "fab fa-telegram", class: "telegram", link: "https://t.me/ebraheemsnaibr" },
-            { name: "تلغرام كريبتو", icon: "fab fa-telegram", class: "telegram", link: "https://t.me/CryptoAbuHafez" },
-            { name: "جروب الدردشة", icon: "fas fa-comments", class: "telegram", link: "https://t.me/+sqbRQJW0Vq0xOTE8" }
+            {
+                name: "يوتيوب",
+                icon: "fab fa-youtube",
+                link: "https://youtube.com/@ebsniperfx?si=mrKhBJrAd7NesRCU",
+                description: "قناة اليوتيوب الرسمية"
+            },
+            {
+                name: "إنستغرام",
+                icon: "fab fa-instagram",
+                link: "https://www.instagram.com/ebsniperfx?igsh=a3NhOTF5aHV3azYy",
+                description: "حساب الإنستغرام الرسمي"
+            },
+            {
+                name: "تيك توك",
+                icon: "fab fa-tiktok",
+                link: "https://www.tiktok.com/@ebsniperfx1?_t=ZS-8zLNcuynO1w&_r=1",
+                description: "حساب التيك توك الرسمي"
+            },
+            {
+                name: "تويتر (X)",
+                icon: "fab fa-twitter",
+                link: "https://x.com/ebsniperfx1?t=q1Hkf03wz-vnRUUzOLrAjg&s=09",
+                description: "حساب تويتر الرسمي"
+            },
+            {
+                name: "فيسبوك",
+                icon: "fab fa-facebook",
+                link: "https://www.facebook.com/share/14xqjTWLNi/",
+                description: "صفحة الفيسبوك الرسمية"
+            },
+            {
+                name: "سناب شات",
+                icon: "fab fa-snapchat",
+                link: "https://www.snapchat.com/add/sniper77i7?share_id=Qp0OZAeUdw0&locale=ar-AE",
+                description: "حساب السناب شات الرسمي"
+            },
+            {
+                name: "قناة التلغرام",
+                icon: "fab fa-telegram",
+                link: "https://t.me/ebsniperfx",
+                description: "قناة التلغرام الرئيسية"
+            },
+            {
+                name: "قناة التلغرام (فوركس)",
+                icon: "fab fa-telegram",
+                link: "https://t.me/ebraheemsnaibr",
+                description: "قناة الفوركس على التلغرام"
+            },
+            {
+                name: "قناة التلغرام (كريبتو)",
+                icon: "fab fa-telegram",
+                link: "https://t.me/CryptoAbuHafez",
+                description: "قناة الكريبتو على التلغرام"
+            },
+            {
+                name: "جروب الدردشة العام",
+                icon: "fas fa-comments",
+                link: "https://t.me/+sqbRQJW0Vq0xOTE8",
+                description: "جروب الدردشة العام على التلغرام"
+            }
         ];
 
-        // عناصر DOM
-        const modalOverlay = document.getElementById('modalOverlay');
-        const modalContent = document.getElementById('modalContent');
-        const openModalButtons = document.querySelectorAll('.open-modal');
+        // DOM Elements
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-        const copyAlert = document.getElementById('copyAlert');
-        const currentYearSpan = document.getElementById('currentYear');
+        const navLinks = document.getElementById('navLinks');
+        const sectionCards = document.querySelectorAll('.section-card');
+        const sectionDetails = document.querySelectorAll('.section-details');
+        const closeDetailsBtns = document.querySelectorAll('.close-details');
+        const currentYear = document.getElementById('currentYear');
+        const educationList = document.querySelector('.lesson-list');
+        const technicalList = document.getElementById('technical-lessons');
+        const brokersList = document.querySelector('.broker-list');
+        const socialGrid = document.querySelector('.social-grid');
 
-        // تهيئة السنة الحالية في الفوتر
-        if (currentYearSpan) {
-            currentYearSpan.textContent = new Date().getFullYear();
-        }
+        // تعيين السنة الحالية في الفوتر
+        currentYear.textContent = new Date().getFullYear();
 
-        // دالة لفتح المودال
-        function openModal(section) {
-            const data = siteData[section];
-            if (!data) return;
-            
-            // إنشاء محتوى المودال
-            modalContent.innerHTML = `
-                <div class="modal-header">
-                    <h3>${data.title}</h3>
-                    <button class="modal-close" id="closeModal">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ${data.content}
-                </div>
-            `;
-            
-            // إضافة محتوى ديناميكي حسب القسم
-            if (section === 'trading') {
-                // إضافة دروس المرحلة الأولى
-                const basicsLessonsContainer = document.getElementById('basicsLessons');
-                basicsLessonsContainer.innerHTML = '';
-                lessons.basics.forEach(lesson => {
-                    basicsLessonsContainer.innerHTML += `
-                        <div class="lesson-item">
-                            <div>
-                                <h4>${lesson.name}</h4>
-                            </div>
-                            <a href="${lesson.link}" target="_blank" class="btn btn-accent">انقر هنا للمشاهدة</a>
-                        </div>
-                    `;
-                });
-                
-                // إضافة دروس المرحلة الثانية
-                const technicalLessonsContainer = document.getElementById('technicalLessons');
-                technicalLessonsContainer.innerHTML = '';
-                lessons.technical.forEach(lesson => {
-                    technicalLessonsContainer.innerHTML += `
-                        <div class="lesson-item">
-                            <div>
-                                <h4>${lesson.name}</h4>
-                            </div>
-                            <a href="${lesson.link}" target="_blank" class="btn btn-accent">انقر هنا للمشاهدة</a>
-                        </div>
-                    `;
-                });
-                
-                // إضافة وظيفة التبويب
-                setupTabs();
-                
-            } else if (section === 'vip') {
-                // إضافة قائمة البروكرز
-                const brokersList = document.getElementById('brokersList');
-                brokersList.innerHTML = '';
-                brokers.forEach(broker => {
-                    brokersList.innerHTML += `
-                        <div class="broker-item">
-                            <div class="broker-header">
-                                <img src="${broker.image}" alt="${broker.name}" class="broker-image">
-                                <h4 style="font-size: 1.2rem;">${broker.name}</h4>
-                            </div>
-                            <div class="broker-actions">
-                                <a href="${broker.regLink}" target="_blank" class="btn">انقر هنا للتسجيل</a>
-                                <button class="copy-btn" data-code="${broker.refCode}">انقر لنسخ الكود</button>
-                                <a href="${broker.tutorialLink}" target="_blank" class="btn btn-primary">شرح فتح الحساب</a>
-                            </div>
-                            ${broker.notes ? `<div class="broker-note">${broker.notes}</div>` : ''}
-                        </div>
-                    `;
-                });
-                
-                // إضافة وظيفة نسخ الأكواد
-                setupCopyButtons();
-                
-            } else if (section === 'social') {
-                // إضافة أيقونات وسائل التواصل
-                const socialIconsContainer = document.getElementById('socialIcons');
-                socialIconsContainer.innerHTML = '';
-                socialMedia.forEach(social => {
-                    socialIconsContainer.innerHTML += `
-                        <a href="${social.link}" target="_blank" class="social-icon">
-                            <i class="${social.icon} ${social.class}"></i>
-                            <span>${social.name}</span>
-                        </a>
-                    `;
-                });
-            }
-            
-            // إظهار المودال
-            modalOverlay.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-            
-            // إضافة حدث الإغلاق
-            document.getElementById('closeModal').addEventListener('click', closeModal);
-        }
+        // تهيئة الدروس التعليمية
+        function initializeLessons() {
+            // إضافة الدروس الأساسية
+            basicLessons.forEach(lesson => {
+                const lessonItem = document.createElement('li');
+                lessonItem.className = 'lesson-item';
+                lessonItem.innerHTML = `
+                    <div class="lesson-title">${lesson.title}</div>
+                    <a href="${lesson.link}" target="_blank" class="lesson-link">انقر هنا للمشاهدة</a>
+                `;
+                educationList.appendChild(lessonItem);
+            });
 
-        // دالة لإغلاق المودال
-        function closeModal() {
-            modalOverlay.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // دالة لإعداد التبويبات
-        function setupTabs() {
-            const tabBtns = document.querySelectorAll('.tab-btn');
-            
-            tabBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    // إزالة النشاط من جميع الأزرار
-                    tabBtns.forEach(b => b.classList.remove('active'));
-                    // إضافة النشاط للزر المختار
-                    btn.classList.add('active');
-                    
-                    // إخفاء جميع المحتويات
-                    document.querySelectorAll('.tab-content').forEach(content => {
-                        content.classList.remove('active');
-                    });
-                    
-                    // إظهار المحتوى المطلوب
-                    const tabId = btn.getAttribute('data-tab');
-                    document.getElementById(tabId).classList.add('active');
-                });
+            // إضافة دروس التحليل الفني
+            technicalLessons.forEach(lesson => {
+                const lessonItem = document.createElement('li');
+                lessonItem.className = 'lesson-item';
+                lessonItem.innerHTML = `
+                    <div class="lesson-title">${lesson.title}</div>
+                    <a href="${lesson.link}" target="_blank" class="lesson-link">انقر هنا للمشاهدة</a>
+                `;
+                technicalList.appendChild(lessonItem);
             });
         }
 
-        // دالة لإعداد أزرار النسخ
-        function setupCopyButtons() {
-            const copyButtons = document.querySelectorAll('.copy-btn');
-            
-            copyButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const code = button.getAttribute('data-code');
-                    
-                    // نسخ النص إلى الحافظة
+        // تهيئة البروكرز
+        function initializeBrokers() {
+            brokers.forEach(broker => {
+                const brokerItem = document.createElement('li');
+                brokerItem.className = 'broker-item';
+                
+                let brokerHTML = `
+                    <div class="broker-title">${broker.name}</div>
+                    <p>${broker.description}</p>
+                    <div class="broker-info">
+                        <div class="broker-image">
+                            <img src="${broker.image}" alt="${broker.name}">
+                        </div>
+                        <div class="broker-links">
+                `;
+                
+                if (broker.regLink) {
+                    brokerHTML += `<a href="${broker.regLink}" target="_blank" class="broker-link">رابط التسجيل</a> `;
+                }
+                
+                if (broker.refCode) {
+                    brokerHTML += `<button class="copy-code" data-code="${broker.refCode}">انقر لنسخ الكود</button>`;
+                }
+                
+                if (broker.tutorialLink) {
+                    brokerHTML += `<br><a href="${broker.tutorialLink}" target="_blank" class="lesson-link mt-10">شرح فتح الحساب</a>`;
+                }
+                
+                if (broker.transferLink) {
+                    brokerHTML += `<br><a href="${broker.transferLink}" target="_blank" class="lesson-link mt-10">طريقة نقل الوكالة</a>`;
+                }
+                
+                if (broker.mt5Link) {
+                    brokerHTML += `<br><a href="${broker.mt5Link}" target="_blank" class="lesson-link mt-10">ربط الحساب بالـ MT5</a>`;
+                }
+                
+                if (broker.bonusInfo) {
+                    brokerHTML += `<br><p class="mt-10"><strong>ملاحظة:</strong> ${broker.bonusInfo}</p>`;
+                }
+                
+                brokerHTML += `
+                        </div>
+                    </div>
+                `;
+                
+                brokerItem.innerHTML = brokerHTML;
+                brokersList.appendChild(brokerItem);
+            });
+
+            // إضافة مستمعي الأحداث لأزرار نسخ الأكواد
+            document.querySelectorAll('.copy-code').forEach(button => {
+                button.addEventListener('click', function() {
+                    const code = this.getAttribute('data-code');
                     navigator.clipboard.writeText(code).then(() => {
-                        // إظهار التنبيه
-                        copyAlert.style.display = 'block';
-                        setTimeout(() => {
-                            copyAlert.style.display = 'none';
-                        }, 3000);
-                        
-                        // تغيير نص الزر مؤقتاً
-                        const originalText = button.textContent;
-                        button.textContent = 'تم النسخ!';
-                        button.classList.add('copied');
+                        const originalText = this.textContent;
+                        this.textContent = 'تم النسخ!';
+                        this.style.backgroundColor = 'var(--success)';
                         
                         setTimeout(() => {
-                            button.textContent = originalText;
-                            button.classList.remove('copied');
+                            this.textContent = originalText;
+                            this.style.backgroundColor = 'var(--accent)';
                         }, 2000);
-                    }).catch(err => {
-                        console.error('فشل نسخ النص: ', err);
-                        alert('تعذر نسخ الكود، يرجى المحاولة مرة أخرى');
                     });
                 });
             });
         }
 
-        // إضافة أحداث لأزرار فتح المودال
-        openModalButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const card = button.closest('.section-card');
-                const section = card.getAttribute('data-section');
-                openModal(section);
-            });
-        });
-
-        // إغلاق المودال عند النقر خارج المحتوى
-        modalOverlay.addEventListener('click', (e) => {
-            if (e.target === modalOverlay) {
-                closeModal();
-            }
-        });
-
-        // إغلاق المودال بمفتاح Escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
-        });
-
-        // إضافة حدث لقائمة الهاتف المتحرك
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mainNav.classList.toggle('show');
+        // تهيئة وسائل التواصل الاجتماعي
+        function initializeSocialMedia() {
+            socialMedia.forEach(social => {
+                const socialItem = document.createElement('a');
+                socialItem.className = 'social-item';
+                socialItem.href = social.link;
+                socialItem.target = '_blank';
+                socialItem.innerHTML = `
+                    <i class="${social.icon}"></i>
+                    <h4>${social.name}</h4>
+                    <p>${social.description}</p>
+                `;
+                socialGrid.appendChild(socialItem);
             });
         }
 
-        // إغلاق قائمة الهاتف المتحرك عند النقر على رابط
-        document.querySelectorAll('#mainNav a').forEach(link => {
-            link.addEventListener('click', () => {
-                mainNav.classList.remove('show');
+        // عرض تفاصيل القسم
+        function showSectionDetails(sectionId) {
+            // إخفاء جميع تفاصيل الأقسام
+            sectionDetails.forEach(detail => {
+                detail.classList.remove('active');
             });
-        });
+            
+            // إظهار القسم المحدد
+            const targetDetail = document.getElementById(`${sectionId}-details`);
+            if (targetDetail) {
+                targetDetail.classList.add('active');
+                
+                // التمرير إلى القسم
+                targetDetail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            
+            // تحديث القائمة النشطة
+            updateActiveNav(sectionId);
+        }
 
-        // تهيئة الموقع عند التحميل
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('تم تحميل موقع إبراهيم أبو حافظ بنجاح!');
+        // تحديث القائمة النشطة
+        function updateActiveNav(sectionId) {
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // إخفاء تفاصيل جميع الأقسام
+        function hideAllDetails() {
+            sectionDetails.forEach(detail => {
+                detail.classList.remove('active');
+            });
+        }
+
+        // إعداد مستمعي الأحداث
+        function setupEventListeners() {
+            // زر القائمة المتنقلة
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+
+            // النقر على بطاقات الأقسام
+            sectionCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const sectionId = card.getAttribute('data-section');
+                    showSectionDetails(sectionId);
+                    
+                    // إغلاق القائمة المتنقلة إذا كانت مفتوحة
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
+            });
+
+            // أزرار إغلاق التفاصيل
+            closeDetailsBtns.forEach(btn => {
+                btn.addEventListener('click', hideAllDetails);
+            });
+
+            // روابط القائمة
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const sectionId = this.getAttribute('href').substring(1);
+                    
+                    if (sectionId === 'home') {
+                        hideAllDetails();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else {
+                        showSectionDetails(sectionId);
+                    }
+                    
+                    // إغلاق القائمة المتنقلة إذا كانت مفتوحة
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
+            });
+
+            // زر CTA
+            document.querySelector('.cta-button').addEventListener('click', function(e) {
+                e.preventDefault();
+                showSectionDetails('education');
+            });
+
+            // إغلاق التفاصيل عند النقر خارجها
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.section-details') && 
+                    !e.target.closest('.section-card') && 
+                    !e.target.closest('.nav-links a')) {
+                    // لا نقوم بإخفاء التفاصيل تلقائياً للحفاظ على تجربة مستخدم أفضل
+                }
+            });
+        }
+
+        // تهيئة التطبيق عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeLessons();
+            initializeBrokers();
+            initializeSocialMedia();
+            setupEventListeners();
         });
     </script>
 </body>
